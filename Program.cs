@@ -14,9 +14,10 @@ using Terminal.Gui.ViewBase;      // View, Pos, Dim
 using Terminal.Gui.Views;         // Runnable, Label, Button, MenuBar, StatusBar, Shortcut
 
 ConfigurationManager.Enable (ConfigLocations.All);
+Application.MaximumIterationsPerSecond = 60;
 
 // Instance lifecycle — NOT static Init/Run/Shutdown:  Create() -> Run<T>() -> Dispose().
-Application
+FastApplication
     .Create ()
     .Run<MainWindow> ()
     .Dispose ();
